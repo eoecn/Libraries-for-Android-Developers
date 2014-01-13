@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+>
+<TextView
+android:id ="@+id/test01"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:text="hello"
+/>
+<Button
+android:id="@+id/bt"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="获取图片"
+/>
+<ImageButton
+android:id="@+id/ib"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:background="@drawable/icon"
+/>
+<ImageView android:id="@+id/iv"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:background="@drawable/icon"/>
+
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical">
+	<TextView android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:text="账号" 
+		android:textSize="36sp"/>
+	<EditText android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:id="@+id/et01"
+		android:text="jjj"
+		android:textSize="36sp"/>
+	<TextView android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:text="密码登陆" 
+		android:textSize="36sp"/>
+	<EditText android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:id="@+id/et02"
+		android:text="gfh"
+		android:textSize="36sp"/>
+	<Button android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:text="登陆"
+		android:id="@+id/btn01" />
+</LinearLayout>
