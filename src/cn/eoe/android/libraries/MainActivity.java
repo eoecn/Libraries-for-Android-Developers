@@ -7,7 +7,8 @@ import org.apkplug.app.FrameworkInstance;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleEvent;
 import org.osgi.framework.SynchronousBundleListener;
-import com.Adapter.ListBundleAdapter;
+
+import cn.eoe.app.adapter.ListBundleAdapter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
