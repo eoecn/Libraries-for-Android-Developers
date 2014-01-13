@@ -1,106 +1,110 @@
 package cn.eoe.android.libraries;
 
-import java.io.File;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import java.util.List;
 
-import dalvik.system.DexClassLoader;
+import org.apkplug.app.FrameworkFactory;
+import org.apkplug.app.FrameworkInstance;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleEvent;
+import org.osgi.framework.SynchronousBundleListener;
+import com.Adapter.ListBundleAdapter;
 import android.os.Bundle;
-import android.os.Environment;
 import android.app.Activity;
-import android.content.pm.PackageInfo;
-import android.util.Log;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
-	private Class mActivityClass;
-	private Object instance;
-	private Object mActivityInstance;
-	Class localClass;
-
+	private FrameworkInstance frame=null;
+	private List<org.osgi.framework.Bundle> bundles=null;
+	private ListView bundlelist =null;
+	private ListBundleAdapter adapter=null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		Button button1 = (Button) findViewById(R.id.button1);
-		button1.setOnClickListener(listener);
-	}
-
-	private OnClickListener listener = new OnClickListener() {
-
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			Bundle paramBundle = new Bundle();
-			paramBundle.putBoolean("KEY_START_FROM_OTHER_ACTIVITY", true);
-			paramBundle.putString("str", "PlugActivity");
-
-			String path = Environment.getExternalStorageDirectory()
-					+ File.separator;
-			String filename = "HeyIce.apk";
-
-			String optimizedDirectory = path + File.separator + "dex_temp";
-			// 核心是这里， 通过getDir来获取一个File对象，然后在获取到getAbsolutePath,
-			// 传递给DexClassLoader 即可
-			File file = getDir("dex", 0);
-//			DexClassLoader classLoader = new DexClassLoader(path + filename,
-//					file.getAbsolutePath(), null, getClassLoader());
-			String dexpath =  path + filename ; //"/sdcard/HeyIce.apk";
-			String dexoutputpath =  file.getAbsolutePath();// "/mnt/sdcard/";
-			LoadAPK(paramBundle, dexpath, dexoutputpath);
-
+		try
+        {
+        	//启动框架
+			frame=FrameworkFactory.getInstance().start(null,MainActivity.this,new MyApplication(this.getApplicationContext()));
+			//如果框架启动成功就把systembundle插件放到BundleContextFactory以备进行osgi通讯使用
+			BundleContextFactory.getInstance().setBundleContext(frame.getSystemBundleContext());
+        }
+        catch (Exception ex)
+        {
+            System.err.println("Could not create : " + ex);
+            //ex.printStackTrace();
+            int nPid = android.os.Process.myPid();
+			android.os.Process.killProcess(nPid);
+        }
+		
+		 //已安装插件列表
+        bundlelist=(ListView)findViewById(R.id.bundlelist);
+		bundles=new java.util.ArrayList<org.osgi.framework.Bundle>();
+		BundleContext context =BundleContextFactory.getInstance().getBundleContext();
+		for(int i=0;i<context.getBundles().length;i++)
+		{
+			//获取已安装插件
+				bundles.add(context.getBundles()[i]);        	        
 		}
-	};
-
-	public void LoadAPK(Bundle paramBundle, String dexpath, String dexoutputpath) {
-		ClassLoader localClassLoader = ClassLoader.getSystemClassLoader();
-		DexClassLoader localDexClassLoader = new DexClassLoader(dexpath,
-				dexoutputpath, null, localClassLoader);
-		try {
-			PackageInfo plocalObject = getPackageManager()
-					.getPackageArchiveInfo(dexpath, 1);
-
-			if ((plocalObject.activities != null)
-					&& (plocalObject.activities.length > 0)) {
-				String activityname = plocalObject.activities[0].name;
-				Log.d("sys", "activityname = " + activityname);
-
-				localClass = localDexClassLoader.loadClass(activityname);// 结果："com.example.fragmentproject.FristActivity"
-				mActivityClass = localClass;
-				Constructor localConstructor = localClass
-						.getConstructor(new Class[] {});
-				instance = localConstructor.newInstance(new Object[] {});
-				Log.d("sys", "instance = " + instance);
-				mActivityInstance = instance;
-
-//				Method des = localClass.getMethod("test");
-//				des.invoke(instance);
-
-//				Method localMethodSetActivity = localClass.getDeclaredMethod(
-//						"setActivity", new Class[] { Activity.class });
-//				localMethodSetActivity.setAccessible(true);
-//				localMethodSetActivity.invoke(instance, new Object[] { this });
-
-				Method methodonCreate = localClass.getDeclaredMethod(
-						"onCreate", new Class[] { Bundle.class });
-				methodonCreate.setAccessible(true);
-				methodonCreate.invoke(instance, paramBundle);
-			}
-			return;
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		adapter=new ListBundleAdapter(MainActivity.this,bundles);
+		bundlelist.setAdapter(adapter);
+		ListenerBundleEvent();
+	}
+	/**
+	 * 监听插件安装事件，当有新插件安装或卸载时成功也更新一下
+	 */
+	public void ListenerBundleEvent(){
+			BundleContextFactory.getInstance().getBundleContext()
+			.addBundleListener(
+					new SynchronousBundleListener(){
+	
+						public void bundleChanged(BundleEvent event) {
+							//把插件列表清空
+							bundles.clear();
+							BundleContext context =BundleContextFactory.getInstance().getBundleContext();
+							for(int i=0;i<context.getBundles().length;i++)
+							{
+									bundles.add(context.getBundles()[i]);        	        
+	
+							}
+							adapter.notifyDataSetChanged();
+						}
+					
+			});
+	}
+	
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
+				&& event.getAction() != KeyEvent.ACTION_UP) {
+			AlertDialog.Builder alertbBuilder = new AlertDialog.Builder(this);
+			alertbBuilder
+					.setTitle("真的要退出？")
+					.setMessage("你确定要退出？")
+					.setPositiveButton("确定",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int which) {
+									//MyProperty中调试模式设置为true调用shutdown将清理已安装插件缓存
+									//以在下次启动时重新安装
+									frame.shutdown();
+									int nPid = android.os.Process.myPid();
+									android.os.Process.killProcess(nPid);
+								}
+							})
+					.setNegativeButton("取消",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int which) {
+									dialog.cancel();
+								}
+							}).create();
+			alertbBuilder.show();
+			return true;
+		} else {
+			return super.dispatchKeyEvent(event);
 		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
+	} 
 }

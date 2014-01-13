@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:paddingTop="5dip"
+  android:paddingBottom="5dip">
+  
+  <ImageView android:id="@+id/image_item_1" android:layout_width="50dp" android:layout_centerVertical="true"
+  android:layout_height="50dp" android:src="@drawable/icon_360"/>
+  
+  <LinearLayout android:id="@+id/linearlayout_out_1" android:layout_width="wrap_content" android:layout_marginLeft="5dip" android:layout_centerVertical="true"
+  android:layout_height="wrap_content" android:orientation="vertical" android:layout_toRightOf="@+id/image_item_1" android:layout_toLeftOf="@+id/image_item_2">
+    <RelativeLayout android:id="@+id/linearlayout_in_0" android:layout_width="fill_parent"
+  android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dip">
+   <TextView android:id="@+id/text_item_1" android:layout_width="wrap_content"
+  android:layout_height="wrap_content" 
+  android:textSize="16sp" android:textStyle="bold" android:text="360安全卫士" android:textColor="#000000"
+   />
+  </RelativeLayout>
+   
+  <RelativeLayout android:id="@+id/linearlayout_in_1" android:layout_width="fill_parent"
+  android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="5dip">
+
+   <TextView
+       android:id="@+id/text_item_2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginRight="10px"
+       android:ellipsize="end"
+       android:singleLine="true"
+       android:text="应用 > 安全"
+       android:textSize="12sp"
+       android:textStyle="italic" />
+
+  </RelativeLayout>
+    </LinearLayout>
+    
+  <ImageView android:id="@+id/image_item_2" android:layout_width="1dip" android:src="@drawable/tab_divider" android:layout_centerVertical="true"
+  android:layout_height="wrap_content" android:layout_toLeftOf="@+id/linearlayout_out_2"
+  android:layout_marginRight="15dip"
+  />
+  
+  <LinearLayout android:id="@+id/linearlayout_out_2" android:layout_width="40dp" android:layout_marginRight="10dip" 
+      android:layout_centerVertical="true"
+      android:gravity="center"
+  android:layout_height="fill_parent"
+  android:orientation="vertical" android:layout_alignParentRight="true"
+  >
+  
+  
+   <TextView android:id="@+id/text_item_4"
+       android:textSize="20sp"
+        android:layout_width="wrap_content"
+  android:layout_height="wrap_content" android:text="下  载"
+  android:textStyle="italic" 
+  />
+  </LinearLayout>
+  
+</RelativeLayout>
