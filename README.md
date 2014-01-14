@@ -1,46 +1,44 @@
 Libraries-for-Android-Developers
-================================
+=========
 
 Libraries for Android developers By eoe.cn Community
 
-Libraries-for-Android-Developers 0.0.1²âÊÔ°æ
+Libraries-for-Android-Developers 0.0.1æµ‹è¯•ç‰ˆ
 
-ÊµÏÖ¹¦ÄÜ:
-	Æô¶¯apkplug¿ò¼Ü Í¨¹ıMyApplicationÖĞAutoStart()º¯Êı
+å®ç°åŠŸèƒ½: å¯åŠ¨apkplugæ¡†æ¶ é€šè¿‡MyApplicationä¸­AutoStart()å‡½æ•°
 
-ÉèÖÃµ±¿ò¼ÜÆô¶¯Ê±×Ô¶¯Æô¶¯µÄ²å¼ş£¬´ïµ½Æô¶¯²å¼şµÄÄ¿µÄ
+è®¾ç½®å½“æ¡†æ¶å¯åŠ¨æ—¶è‡ªåŠ¨å¯åŠ¨çš„æ’ä»¶ï¼Œè¾¾åˆ°å¯åŠ¨æ’ä»¶çš„ç›®çš„
 
-bundles/ Ä¿Â¼ÏÂ´æ·ÅµÄÊÇ²å¼ş¹¤³Ì
+bundles/ ç›®å½•ä¸‹å­˜æ”¾çš„æ˜¯æ’ä»¶å·¥ç¨‹
 
-Ò»¡¢¹¤³ÌÄ¿Â¼½á¹¹
+ä¸€ã€å·¥ç¨‹ç›®å½•ç»“æ„
 
-¸ùÄ¿Â¼
+```
+æ ¹ç›®å½•
+â”œ bundles -- æ’ä»¶é¡¹ç›® 
+â”œ libs -- å­˜æ”¾é¡¹ç›®å¼•ç”¨çš„ç¬¬ä¸‰æ–¹åŒ… 
+â”œ res -- å­˜æ”¾å·¥ç¨‹ç”¨åˆ°çš„å›¾ç‰‡,å¸ƒå±€ 
+â”œ src -- å­˜æ”¾å·¥ç¨‹çš„åŒ…åŠjavaæºç æ–‡ä»¶
+```
 
-©À bundles -- ²å¼şÏîÄ¿
-©À libs -- ´æ·ÅÏîÄ¿ÒıÓÃµÄµÚÈı·½°ü
-©À res -- ´æ·Å¹¤³ÌÓÃµ½µÄÍ¼Æ¬,²¼¾Ö
-©À src -- ´æ·Å¹¤³ÌµÄ°ü¼°javaÔ´ÂëÎÄ¼ş
-
-1¡¢libsÄ¿Â¼ 
-libsÄ¿Â¼ÓÃÓÚ´æ·ÅÏîÄ¿ÒıÓÃµÄµÚÈı·½jar°ü¡£
-
-libsÄ¿Â¼ÀïµÄjar°üÎÄ¼ş£º
-
+1ã€libsç›®å½• 
+libsç›®å½•ç”¨äºå­˜æ”¾é¡¹ç›®å¼•ç”¨çš„ç¬¬ä¸‰æ–¹jaråŒ…ã€‚
+libsç›®å½•é‡Œçš„jaråŒ…æ–‡ä»¶ï¼š
+```
 libs
+â”œ armeabi-v7a-libndkoo.so --armv7aæ¶æ„ apkplugçš„.soæ–‡ä»¶ 
+â”œ armeabi -libndkoo.so --armæ¶æ„ apkplugçš„.soæ–‡ä»¶ 
+â”œ x86 -libndkoo.so --x86æ¶æ„ apkplugçš„.soæ–‡ä»¶ 
+â”œ Bundle1.5.5.jar --apkplug çš„jaråŒ… 
+â”œ android-support-v4.jar --androidå…¼å®¹çš„åŒ…
+```
 
-©À armeabi-v7a-libndkoo.so --armv7a¼Ü¹¹ apkplugµÄ.soÎÄ¼ş
-©À armeabi -libndkoo.so --arm¼Ü¹¹ apkplugµÄ.soÎÄ¼ş
-©À x86 -libndkoo.so --x86¼Ü¹¹ apkplugµÄ.soÎÄ¼ş
-©À Bundle1.5.5.jar --apkplug µÄjar°ü
-©À android-support-v4.jar --android¼æÈİµÄ°ü
-
-1¡¢srcÄ¿Â¼ 
-srcÄ¿Â¼ÓÃÓÚ´æ·Å¹¤³ÌµÄ°ü¼°javaÔ´ÂëÎÄ¼ş¡£
-
-ÏÂÃæÊÇsrcÄ¿Â¼µÄ×ÓÄ¿Â¼£º
-
-src 
-
-©À cn.eoe.android.libraries --´æ·Å³ÌĞòÆô¶¯Àà
-©À cn.eoe.app.adapter --´æ·ÅÊÊÅäÆ÷µÄÊµÏÖÀàµÄ°ü 
-©À cn.eoe.app.adapter.base --´æ·ÅÊÊÅäÆ÷»ùÀàµÄ°ü
+2ã€srcç›®å½• 
+srcç›®å½•ç”¨äºå­˜æ”¾å·¥ç¨‹çš„åŒ…åŠjavaæºç æ–‡ä»¶ã€‚
+ä¸‹é¢æ˜¯srcç›®å½•çš„å­ç›®å½•ï¼š
+```
+src
+â”œ cn.eoe.android.libraries --å­˜æ”¾ç¨‹åºå¯åŠ¨ç±» 
+â”œ cn.eoe.app.adapter --å­˜æ”¾é€‚é…å™¨çš„å®ç°ç±»çš„åŒ… 
+â”œ cn.eoe.app.adapter.base --å­˜æ”¾é€‚é…å™¨åŸºç±»çš„åŒ…
+```
