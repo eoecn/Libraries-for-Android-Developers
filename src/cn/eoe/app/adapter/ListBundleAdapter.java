@@ -71,6 +71,7 @@ public class ListBundleAdapter extends LListAdapter<Bundle>{
 		linearlayout_out_2.setOnClickListener(
 				new OnClickListener(){
 					public void onClick(View v) {
+								//ab为org.osgi.framework.Bundle
 								if(ab.getState()!=ab.ACTIVE){
 									//判断插件是否已启动
 									try {
