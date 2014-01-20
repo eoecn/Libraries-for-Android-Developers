@@ -1,44 +1,44 @@
 <p>Libraries-for-Android-Developers <br>
 Libraries for Android developers By eoe.cn Community</p>
 
-<p>Libraries-for-Android-Developers 0.0.2²âÊÔ°æ</p>
+<p>Libraries-for-Android-Developers 0.0.2æµ‹è¯•ç‰ˆ</p>
 
-<p>ÊµÏÖ¹¦ÄÜ: Í¨¹ıapkplugÌá¹©µÄ½Ó¿Ú°²×°±¾µØapkÎÄ¼ş¸ñÊ½µÄ²å¼ş</p>
+<p>å®ç°åŠŸèƒ½: é€šè¿‡apkplugæä¾›çš„æ¥å£å®‰è£…æœ¬åœ°apkæ–‡ä»¶æ ¼å¼çš„æ’ä»¶</p>
 
-<p>bundles/ Ä¿Â¼ÏÂ´æ·ÅµÄÊÇ²å¼ş¹¤³Ì <br>
-bundles/ Í¬Ê±´æ·ÅÁËÁ½¸ö²å¼şapkÎÄ¼ş,Äã¿É½«Æä·ÅÈëSD¿¨ÖĞ¨C&gt;Æô¶¯³ÌĞò¨C&gt;°²×°±¾µØ²å¼ş(°´Å¥)½«²å¼ş¼ÓÔØµ½ËŞÖ÷³ÌĞòÖĞ</p>
+<p>bundles/ ç›®å½•ä¸‹å­˜æ”¾çš„æ˜¯æ’ä»¶å·¥ç¨‹ <br>
+bundles/ åŒæ—¶å­˜æ”¾äº†ä¸¤ä¸ªæ’ä»¶apkæ–‡ä»¶,ä½ å¯å°†å…¶æ”¾å…¥SDå¡ä¸­â€“&gt;å¯åŠ¨ç¨‹åºâ€“&gt;å®‰è£…æœ¬åœ°æ’ä»¶(æŒ‰é’®)å°†æ’ä»¶åŠ è½½åˆ°å®¿ä¸»ç¨‹åºä¸­</p>
 
-<p>¹¤³ÌÄ¿Â¼½á¹¹</p>
+<p>å·¥ç¨‹ç›®å½•ç»“æ„</p>
 
-<p>¸ùÄ¿Â¼ <br>
-©À bundles ¨C ²å¼şÏîÄ¿  <br>
-©À libs ¨C ´æ·ÅÏîÄ¿ÒıÓÃµÄµÚÈı·½°ü  <br>
-©À res ¨C ´æ·Å¹¤³ÌÓÃµ½µÄÍ¼Æ¬,²¼¾Ö  <br>
-©À src ¨C ´æ·Å¹¤³ÌµÄ°ü¼°javaÔ´ÂëÎÄ¼ş <br>
-libsÄ¿Â¼</p>
+<p>æ ¹ç›®å½• <br>
+â”œ bundles â€“ æ’ä»¶é¡¹ç›®  <br>
+â”œ libs â€“ å­˜æ”¾é¡¹ç›®å¼•ç”¨çš„ç¬¬ä¸‰æ–¹åŒ…  <br>
+â”œ res â€“ å­˜æ”¾å·¥ç¨‹ç”¨åˆ°çš„å›¾ç‰‡,å¸ƒå±€  <br>
+â”œ src â€“ å­˜æ”¾å·¥ç¨‹çš„åŒ…åŠjavaæºç æ–‡ä»¶ <br>
+libsç›®å½•</p>
 
-<p>libsÄ¿Â¼ÓÃÓÚ´æ·ÅÏîÄ¿ÒıÓÃµÄµÚÈı·½jar°ü¡£</p>
+<p>libsç›®å½•ç”¨äºå­˜æ”¾é¡¹ç›®å¼•ç”¨çš„ç¬¬ä¸‰æ–¹jaråŒ…ã€‚</p>
 
-<p>libsÄ¿Â¼ÀïµÄjar°üÎÄ¼ş£º</p>
+<p>libsç›®å½•é‡Œçš„jaråŒ…æ–‡ä»¶ï¼š</p>
 
 <p>libs <br>
-©À armeabi-v7a-libndkoo.so ¨Carmv7a¼Ü¹¹ apkplugµÄ.soÎÄ¼ş  <br>
-©À armeabi -libndkoo.so ¨Carm¼Ü¹¹ apkplugµÄ.soÎÄ¼ş  <br>
-©À x86 -libndkoo.so ¨Cx86¼Ü¹¹ apkplugµÄ.soÎÄ¼ş  <br>
-©À Bundle1.5.5.jar ¨Capkplug µÄjar°ü  <br>
-©À android-support-v4.jar ¨Candroid¼æÈİµÄ°ü <br>
-srcÄ¿Â¼</p>
+â”œ armeabi-v7a-libndkoo.so â€“armv7aæ¶æ„ apkplugçš„.soæ–‡ä»¶  <br>
+â”œ armeabi -libndkoo.so â€“armæ¶æ„ apkplugçš„.soæ–‡ä»¶  <br>
+â”œ x86 -libndkoo.so â€“x86æ¶æ„ apkplugçš„.soæ–‡ä»¶  <br>
+â”œ Bundle1.5.5.jar â€“apkplug çš„jaråŒ…  <br>
+â”œ android-support-v4.jar â€“androidå…¼å®¹çš„åŒ… <br>
+srcç›®å½•</p>
 
-<p>srcÄ¿Â¼ÓÃÓÚ´æ·Å¹¤³ÌµÄ°ü¼°javaÔ´ÂëÎÄ¼ş¡£</p>
+<p>srcç›®å½•ç”¨äºå­˜æ”¾å·¥ç¨‹çš„åŒ…åŠjavaæºç æ–‡ä»¶ã€‚</p>
 
-<p>ÏÂÃæÊÇsrcÄ¿Â¼µÄ×ÓÄ¿Â¼£º</p>
+<p>ä¸‹é¢æ˜¯srcç›®å½•çš„å­ç›®å½•ï¼š</p>
 
 <p>src <br>
-©À cn.eoe.android.libraries ¨C´æ·Å³ÌĞòÆô¶¯Àà  <br>
-©À cn.eoe.app.adapter ¨C´æ·ÅÊÊÅäÆ÷µÄÊµÏÖÀàµÄ°ü  <br>
-©À cn.eoe.app.adapter.base ¨C´æ·ÅÊÊÅäÆ÷»ùÀàµÄ°ü <br>
-©À cn.eoe.FileUtil ¨CÎÄ¼ş²Ù×÷°ü  <br>
-©À cn.eoe.FileUtil.filter ¨C¹ıÂËÎÄ¼şÀàĞÍµÄ°ü  <br>
-©À cn.eoe.util ¨C¹¤¾ßÀà°ü <br>
-©À cn.eoe.util.Observer ¨C¹Û²âÕßÄ£Ê½ <br>
-©À cn.eoe.util.preferencesFactory ¨Cpreferences¼òµ¥·â×°</p>
+â”œ cn.eoe.android.libraries â€“å­˜æ”¾ç¨‹åºå¯åŠ¨ç±»  <br>
+â”œ cn.eoe.app.adapter â€“å­˜æ”¾é€‚é…å™¨çš„å®ç°ç±»çš„åŒ…  <br>
+â”œ cn.eoe.app.adapter.base â€“å­˜æ”¾é€‚é…å™¨åŸºç±»çš„åŒ… <br>
+â”œ cn.eoe.FileUtil â€“æ–‡ä»¶æ“ä½œåŒ…  <br>
+â”œ cn.eoe.FileUtil.filter â€“è¿‡æ»¤æ–‡ä»¶ç±»å‹çš„åŒ…  <br>
+â”œ cn.eoe.util â€“å·¥å…·ç±»åŒ… <br>
+â”œ cn.eoe.util.Observer â€“è§‚æµ‹è€…æ¨¡å¼ <br>
+â”œ cn.eoe.util.preferencesFactory â€“preferencesç®€å•å°è£…</p>
