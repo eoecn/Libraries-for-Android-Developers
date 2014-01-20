@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin-features  
+Bundle-Name="ResideMenuDemo" 
+Bundle-SymbolicName="com.special.ResideMenuDemo"	
+Bundle-Version="1.0.0"
+date="2012.11.28"
+Install="false"
+provider-name="插件开发商的名称" 
+provider-url="" 
+Bundle-Activator="com.special.ResideMenuDemo.SimpleBundle"
+Bundle-Activity="com.special.ResideMenuDemo.MenuActivity"
+start-level ="1"	
+start-up="true"     
+Bundle-UpdateLocation=""
+Export-Package="com.special.ResideMenuDemo"
+>
+</plugin-features>
