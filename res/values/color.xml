@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md__transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="gray">#FFE3E5E6</color>
+    <color name="common_bg">#f0f2f5</color>
+
+    <drawable name="common_title_bg">#FF2B75F0</drawable>
+    <drawable name="transparent">#00000000</drawable>
+</resources>

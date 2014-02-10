@@ -1,13 +1,11 @@
-package cn.eoe.app.adapter;
+package cn.eoe.android.libraries.adapter;
 import java.util.List;
 
-import org.apkplug.Bundle.StartActivity;
+import cn.eoe.android.libraries.ui.activity.DetailsActivity;
 import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 
 import cn.eoe.android.libraries.R;
-import cn.eoe.app.adapter.base.LListAdapter;
+import cn.eoe.android.libraries.adapter.LListAdapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -71,7 +69,6 @@ public class ListBundleAdapter extends LListAdapter<Bundle>{
 		linearlayout_out_2.setOnClickListener(
 				new OnClickListener(){
 					public void onClick(View v) {
-								//ab为org.osgi.framework.Bundle
 								if(ab.getState()!=ab.ACTIVE){
 									//判断插件是否已启动
 									try {
@@ -116,14 +113,14 @@ public class ListBundleAdapter extends LListAdapter<Bundle>{
 															// TODO Auto-generated catch block
 															e.printStackTrace();
 														}
-											
+
 												dialog.cancel();
 											}
 										}).create();
 						alertbBuilder.show();
 						return false;
 					}
-			
+
 		});
 		
 		convertView.setOnClickListener(
@@ -132,10 +129,11 @@ public class ListBundleAdapter extends LListAdapter<Bundle>{
 					@Override
 					public void onClick(View v) {
 						//这里调用PullToRefreshWebView2Activity从网络 查询插件demo说明
-						
-						
+
+                        mContext.startActivity(new Intent(mContext, DetailsActivity.class));
+
 					}
-			
+
 		});
 		return convertView;
 		}
