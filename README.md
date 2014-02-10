@@ -46,7 +46,12 @@ src目录用于存放工程的包及java源码文件。
 下面是src目录的子目录：
 ```
 src
-├ cn.eoe.android.libraries --存放程序启动类 
-├ cn.eoe.app.adapter --存放适配器的实现类的包 
+├ cn.eoe.android.libraries.adapter --存放适配器的实现类的包
+├ cn.eoe.android.libraries.entity --存放实体类的包
+├ cn.eoe.android.libraries.ui.activity --存放Activity的包
+├ cn.eoe.android.libraries.ui.base --存放基类的包
+├ cn.eoe.android.libraries.ui.fragment --存放Fragment的包
+├ cn.eoe.android.libraries.util --存放常用工具类
+├ cn.eoe.android.libraries.widget --存放扩展控件类的包
 ├ cn.eoe.app.adapter.base --存放适配器基类的包
 ```

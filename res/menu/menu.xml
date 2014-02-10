@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/abs_search"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom|collapseActionView"
+            android:icon="@drawable/search"
+            android:actionViewClass="android.widget.SearchView"
+            android:title="Search"/>
+    <item
+            android:id="@+id/abs_more"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom"
+            android:icon="@drawable/more"
+            android:title="More">
+        <menu>
+            <item
+                    android:id="@+id/abs_attend"
+                    android:icon="@drawable/participation"
+                    android:title="参与规则"/>
+            <item
+                    android:id="@+id/abs_contact"
+                    android:icon="@drawable/contact"
+                    android:title="联系我们"/>
+            <item
+                    android:id="@+id/abs_score"
+                    android:icon="@drawable/score"
+                    android:title="评分鼓励"/>
+            <item
+                    android:id="@+id/abs_opinion"
+                    android:icon="@drawable/opinion"
+                    android:title="意见反馈"/>
+            <item
+                    android:id="@+id/abs_about"
+                    android:icon="@drawable/people"
+                    android:title="关于我们"/>
+        </menu>
+    </item>
+</menu>
