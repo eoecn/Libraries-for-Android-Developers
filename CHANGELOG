@@ -1,0 +1,15 @@
+## 版本更新记录
+
+### ver0.0.1
+1.实现功能: 通过apkplug提供的接口安装本地apk文件格式的插件
+2.新增查看已安装插件的列表
+3.调用apkplug有 
+     1.获取已安装插件接口
+     2.通过osgi系统服务 BundleContext.addBundleListener(SynchronousBundleListener)
+     	监听插件安装卸载情况,动态更新插件列表
+### ver0.0.2
+1.新增cn.eoe.FileUtil –文件操作包 
+2.cn.eoe.util.preferencesFactory –preferences简单封装
+3.新增一个安装本地按钮
+4.通过osgi服务 BundleContext.getServiceReference(BundleControl.class.getName()) 安装本地插件apk
+5.MainActivity.showBundle(org.osgi.framework.Bundle b)方法查询插件属性

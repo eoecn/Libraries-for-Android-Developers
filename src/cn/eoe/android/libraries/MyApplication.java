@@ -25,7 +25,14 @@ import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
-
+/**
+ * 启动框架需要的Property接口 
+ * 文档 http://www.apkplug.com/javadoc/Maindoc1.4.6/
+ * org.apkplug.app 
+             接口 PropertyInstance
+ * @author 梁前武 QQ 1587790525
+ * www.apkplug.com
+ */
 public class MyApplication implements PropertyInstance{
 	public static String name="apkplug";
 	public static boolean DEBUG = true;
@@ -34,13 +41,11 @@ public class MyApplication implements PropertyInstance{
 		this.context=context;
 	}
 	public String getProperty(String key) {
-		// TODO Auto-generated method stub
 		SharedPreferences sharedata = PreferenceManager.getDefaultSharedPreferences(this.context);
 		String data = sharedata.getString(key, null);
 		return data;
 	}
 	public void setProperty(String key, String v) {
-		// TODO Auto-generated method stub
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this.context); 
 		Editor edit = settings.edit();
 		edit.putString(key, v);
@@ -57,6 +62,7 @@ public class MyApplication implements PropertyInstance{
 		try {
 			InputStream in=context.getAssets().open("ActivityForResultDemo.apk");
 			f0=new File(context.getFilesDir(),"ActivityForResultDemo.apk");
+			//将文件从 assets中复制到本地
 			if(!f0.exists())
 			copy(in, f0);
 		} catch (IOException e) {
