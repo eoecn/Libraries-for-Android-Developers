@@ -35,6 +35,11 @@ src目录</p>
 
 <p>src <br>
 ├ cn.eoe.android.libraries –存放程序启动类  <br>
+├ cn.eoe.android.libraries.adapter –存放适配器的实现类的包  <br>
+├ cn.eoe.android.libraries.entity –存放实体类的包  <br>
+├ cn.eoe.android.libraries.ui –存放UI实现的包  <br>
+├ cn.eoe.android.libraries.util –存放工具类的包  <br>
+├ cn.eoe.android.libraries.widget –存放控件的包  <br>
 ├ cn.eoe.app.adapter –存放适配器的实现类的包  <br>
 ├ cn.eoe.app.adapter.base –存放适配器基类的包 <br>
 ├ cn.eoe.FileUtil –文件操作包  <br>
