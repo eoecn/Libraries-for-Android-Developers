@@ -2,7 +2,7 @@ package cn.eoe.FileUtil;
 import java.util.Vector;
 import cn.eoe.FileUtil.FileItem;
 import cn.eoe.android.libraries.R;
-import cn.eoe.app.adapter.base.VListAdapter;
+import cn.eoe.android.libraries.adapter.VListAdapter;
 import cn.eoe.util.Observer.Observer;
 import cn.eoe.util.Observer.Subject;
 import android.content.Context;
