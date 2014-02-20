@@ -16,6 +16,7 @@
 
 package cn.eoe.android.libraries.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -25,8 +26,10 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.*;
 import cn.eoe.android.libraries.R;
+import cn.eoe.android.libraries.ui.fragment.BundleFragment;
 import cn.eoe.android.libraries.ui.fragment.MainFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
@@ -40,14 +43,13 @@ import com.actionbarsherlock.view.MenuItem;
  * Time: 上午10:32
  * To change this template use File | Settings | File Templates.
  */
-public class MainActivity extends SherlockFragmentActivity {
+@SuppressLint("NewApi") public class MainActivity extends SherlockFragmentActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private LinearLayout mDrawerLeft;
     private FrameLayout mContentLayout;
     private PopupWindow selectPopupWindow;
     private int mActivePosition = 0;
-
     private ActionBarDrawerToggle mDrawerToggle;
 
     private CharSequence mDrawerTitle;
@@ -55,7 +57,7 @@ public class MainActivity extends SherlockFragmentActivity {
     private String[] names = new String[]{"参与规则", "联系我们", "评分鼓励", "意见反馈", "关于我们"};
     private int[] imagesIds = new int[]{R.drawable.participation, R.drawable.contact, R.drawable.score, R.drawable.opinion, R.drawable.people};
 
-    @Override
+    @SuppressLint("NewApi") @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -111,14 +113,28 @@ public class MainActivity extends SherlockFragmentActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
+        	System.out.println("position:"+position);
+        	selectItem(position);
         }
     }
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = new MainFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
+    	System.out.println("position:"+position);
+    	Fragment fragment=null;
+    	switch(position){
+    		case 0: 
+    			fragment = new BundleFragment();
+    			break;
+    		case 1: 
+    			fragment = new MainFragment();
+    	        
+    			break;
+    		default:
+    			fragment = new BundleFragment();
+    			break;
+    	}
+    	getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
@@ -136,8 +152,6 @@ public class MainActivity extends SherlockFragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getSupportMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        //TODO  配置搜索信息并添加事件监听器
-
         return true;
     }
 

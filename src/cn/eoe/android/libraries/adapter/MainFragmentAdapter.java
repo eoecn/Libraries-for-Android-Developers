@@ -79,9 +79,9 @@ public class MainFragmentAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.productNameTxt.setText(product.getLib_name());
-        holder.productSubmitterTxt.setText(product.getLib_submitter());
-        holder.productBriefTxt.setText(product.getLib_brief());
+        holder.productNameTxt.setText(product.getTitle());
+        holder.productSubmitterTxt.setText(product.getL_package());
+        holder.productBriefTxt.setText(product.getLede());
         return convertView;
     }
 

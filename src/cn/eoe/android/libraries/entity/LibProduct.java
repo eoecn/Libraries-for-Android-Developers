@@ -30,36 +30,90 @@ public class LibProduct implements Serializable {
      *
      */
     private static final long serialVersionUID = 5438196753574315136L;
-    private String lib_name;
-    private String lib_submitter;
-    private String lib_brief;
-
+    //插件名字
+    private String title;
+    //插件ID
+    private String lid;
+    //插件唯一 ID
+    private String l_package;
+    //插件简介
+    private String lede;
+    //插件详细信息地址（直接拿 webview 包）
+    private String m_show_url;
+    //提交时间
+    private String created_at;
+    //提交者信息（aid：提交者唯一 ID；avatar：提交者头像；uname：提交者名字）
+    private String account;
     /**
-     * @brief 以下扩展详情内容
+     * 插件名字
+     * @return
      */
-    // private String urls.....
-    // private String details
-    public String getLib_name() {
-        return lib_name;
-    }
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	/**
+	 * 插件ID
+	 * @param title
+	 */
+	public String getLid() {
+		return lid;
+	}
+	public void setLid(String lid) {
+		this.lid = lid;
+	}
+	/**
+	 * 插件唯一 ID
+	 * @return
+	 */
+	public String getL_package() {
+		return l_package;
+	}
+	public void setL_package(String l_package) {
+		this.l_package = l_package;
+	}
+	/**
+	 * 插件简介
+	 * @return
+	 */
+	public String getLede() {
+		return lede;
+	}
+	public void setLede(String lede) {
+		this.lede = lede;
+	}
+	/**
+	 * 插件详细信息地址（直接拿 webview 包）；
+	 * @return
+	 */
+	public String getM_show_url() {
+		return m_show_url;
+	}
+	public void setM_show_url(String m_show_url) {
+		this.m_show_url = m_show_url;
+	}
+	/**
+	 * 提交时间
+	 * @return
+	 */
+	public String getCreated_at() {
+		return created_at;
+	}
+	public void setCreated_at(String created_at) {
+		this.created_at = created_at;
+	}
+	/**
+	 * 提交者信息（aid：提交者唯一 ID；avatar：提交者头像；uname：提交者名字）
+	 * @return
+	 */
+	public String getAccount() {
+		return account;
+	}
+	public void setAccount(String account) {
+		this.account = account;
+	}
 
-    public void setLib_name(String lib_name) {
-        this.lib_name = lib_name;
-    }
-
-    public String getLib_submitter() {
-        return lib_submitter;
-    }
-
-    public void setLib_submitter(String lib_submitter) {
-        this.lib_submitter = lib_submitter;
-    }
-
-    public String getLib_brief() {
-        return lib_brief;
-    }
-
-    public void setLib_brief(String lib_brief) {
-        this.lib_brief = lib_brief;
-    }
+    
 }
