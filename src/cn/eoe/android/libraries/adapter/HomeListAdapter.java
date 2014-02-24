@@ -65,9 +65,9 @@ public class HomeListAdapter extends ListAdapter {
 
         mLibProduct = (LibProduct) list.get(position);
 
-        viewHolder.tv_lib_name.setText(mLibProduct.getLib_name());
-        viewHolder.tv_lib_submitters.setText(mLibProduct.getLib_submitter());
-        viewHolder.tv_lib_brief.setText(mLibProduct.getLib_brief());
+        viewHolder.tv_lib_name.setText(mLibProduct.getTitle());
+        viewHolder.tv_lib_submitters.setText(mLibProduct.getLid());
+        viewHolder.tv_lib_brief.setText(mLibProduct.getLede());
 
         return convertView;
     }

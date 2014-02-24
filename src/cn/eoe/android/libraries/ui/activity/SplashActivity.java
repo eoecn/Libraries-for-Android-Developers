@@ -1,10 +1,15 @@
 package cn.eoe.android.libraries.ui.activity;
 
+import com.loopj.android.HttpUtil.HttpTest;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import cn.eoe.android.libraries.R;
+import cn.eoe.android.libraries.entity.LibSlides;
+import cn.eoe.android.libraries.entity.SlideFactory;
+import cn.eoe.android.libraries.entity.SlideFactory.SlideRevHandler;
 import cn.eoe.android.libraries.util.LogUtil;
 
 public class SplashActivity extends Activity {
@@ -31,6 +36,7 @@ public class SplashActivity extends Activity {
         setTheme(R.style.NoTitle);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        
         countdowntimer.start();
     }
 
