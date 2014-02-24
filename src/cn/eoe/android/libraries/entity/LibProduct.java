@@ -35,16 +35,56 @@ public class LibProduct implements Serializable {
     //插件ID
     private String lid;
     //插件唯一 ID
-    private String l_package;
-    //插件简介
+    private String pkg;
+    
+	//插件简介
     private String lede;
     //插件详细信息地址（直接拿 webview 包）
     private String m_show_url;
     //提交时间
     private String created_at;
     //提交者信息（aid：提交者唯一 ID；avatar：提交者头像；uname：提交者名字）
-    private String account;
-    /**
+    private account account;
+    
+    private String apk_url;
+    
+    //class account
+    class account implements Serializable{
+    	private String aid=null;
+    	private String avatar=null;
+    	private String uname=null;
+		public String getAid() {
+			return aid;
+		}
+		public void setAid(String aid) {
+			this.aid = aid;
+		}
+		public String getAvatar() {
+			return avatar;
+		}
+		public void setAvatar(String avatar) {
+			this.avatar = avatar;
+		}
+		public String getUname() {
+			return uname;
+		}
+		public void setUname(String uname) {
+			this.uname = uname;
+		}
+    	
+    }
+    
+    // set() get()
+    
+ 
+	public String getApk_url() {
+		return apk_url;
+	}
+	public void setApk_url(String apk_url) {
+		this.apk_url = apk_url;
+	}
+	
+	/**
      * 插件名字
      * @return
      */
@@ -68,11 +108,11 @@ public class LibProduct implements Serializable {
 	 * 插件唯一 ID
 	 * @return
 	 */
-	public String getL_package() {
-		return l_package;
+	public String getPkg() {
+		return pkg;
 	}
-	public void setL_package(String l_package) {
-		this.l_package = l_package;
+	public void setPkg(String pkg) {
+		this.pkg = pkg;
 	}
 	/**
 	 * 插件简介
@@ -108,10 +148,10 @@ public class LibProduct implements Serializable {
 	 * 提交者信息（aid：提交者唯一 ID；avatar：提交者头像；uname：提交者名字）
 	 * @return
 	 */
-	public String getAccount() {
+	public account getAccount() {
 		return account;
 	}
-	public void setAccount(String account) {
+	public void setAccount(account account) {
 		this.account = account;
 	}
 

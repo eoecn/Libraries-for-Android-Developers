@@ -29,6 +29,9 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.*;
 import cn.eoe.android.libraries.R;
+import cn.eoe.android.libraries.entity.LibSlides;
+import cn.eoe.android.libraries.entity.SlideFactory;
+import cn.eoe.android.libraries.entity.SlideFactory.SlideRevHandler;
 import cn.eoe.android.libraries.ui.fragment.BundleFragment;
 import cn.eoe.android.libraries.ui.fragment.MainFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -75,7 +78,22 @@ import com.actionbarsherlock.view.MenuItem;
 //        items.add(new Item("最新的", R.drawable.star));
 //        items.add(new Item("热门的", R.drawable.like_me));
 //        items.add(new Item("收藏的", R.drawable.star));
+        //获取侧栏目数据 每次都更新不使用缓存
+        SlideFactory.getInstance(this).getSlide(false,
+        		new SlideRevHandler(){
 
+					@Override
+					public void onSuccess(int statusCode, LibSlides slides) {
+						//异步获取的，如果有缓存数据就直接返回
+						System.err.println(statusCode+" "+slides.getData().get(0).getItems().get(0).getTitle());
+					}
+
+					@Override
+					public void onFailure(int statusCode, Throwable throwable) {
+						throwable.printStackTrace();
+					}
+        	
+        });
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         // set a custom shadow that overlays the main content when the drawer opens

@@ -13,3 +13,14 @@
 3.新增一个安装本地按钮
 4.通过osgi服务 BundleContext.getServiceReference(BundleControl.class.getName()) 安装本地插件apk
 5.MainActivity.showBundle(org.osgi.framework.Bundle b)方法查询插件属性
+
+### ver0.0.3
+1.实现了UI主体框架              --actionbarsherlock
+2.实现HTTP数据通讯             --使用的是loopj HTTP库
+3.实现JSON数据解析             --使用的是gson库进行解析
+4.将JSON对象化      		--想对应的对象在cn.eoe.android.libraries.entity 下
+5.数据缓存                              --使用了ASimpleCache框架  框架放置在 cn.eoe.android.libraries.util.ACache中
+6.网络互交与转换封装           --cn.eoe.android.libraries.entity
+                    ProductFactory -- 插件网络数据获取类  (异步网络获取与数据缓存)
+                    SlideFactory   -- 侧栏目网络数据获取类 (异步网络获取与缓存)
+                    
