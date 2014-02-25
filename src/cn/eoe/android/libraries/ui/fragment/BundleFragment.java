@@ -48,7 +48,7 @@ public class BundleFragment extends SherlockFragment implements XListView.IXList
         mainFragmentAdapter=new MainFragmentAdapter(getActivity(),productList);
         mListView.setAdapter(mainFragmentAdapter);
         //更新插件数据  每次都更新不使用缓存
-        ProductFactory.getInstance(this.getActivity()).getProducts(false,"pop" ,1,
+        ProductFactory.getInstance(this.getActivity()).getProducts(true,"pop" ,1,
         		new ProductsRevHandler(){
 					@Override
 					public void onSuccess(int statusCode,LibProducts products,String slideitme ,int page) {
